@@ -97,7 +97,7 @@ public class DefaultTokenServices implements AuthorizationServerTokenServices, R
 			else {
 				// Re-store the access token in case the authentication has changed
 				tokenStore.storeAccessToken(existingAccessToken, authentication);
-				return existingAccessToken;
+				return tokenStore.getAccessToken(authentication);
 			}
 		}
 
